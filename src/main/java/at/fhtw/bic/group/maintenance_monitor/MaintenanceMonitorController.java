@@ -1,14 +1,22 @@
 package at.fhtw.bic.group.maintenance_monitor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class MaintenanceMonitorController {
-    @GetMapping("/")
-    String getMessage(Model model){
-        model.addAttribute("testMessage", "Hello World 2.0");
-        return "greenMonitor";
+    @Autowired
+    public MaintenanceMonitor maintenanceMonitor;
+
+    @RequestMapping("/api/message/set")
+    String setMessage(Model model, @RequestParam(name="m") String m) {
+        maintenanceMonitor.setMessage(m);
+        return "ok";
     }
 }
+
