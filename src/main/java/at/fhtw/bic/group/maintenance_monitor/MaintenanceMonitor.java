@@ -7,7 +7,8 @@ public class MaintenanceMonitor {
     public MaintenanceMonitor() {
 
     }
-    private String message = "default";
+    public final String DEFAULT = "No Problems";
+    private String message = DEFAULT;
 
 
     public String getMessage() {
@@ -18,4 +19,7 @@ public class MaintenanceMonitor {
         this.message = message;
     }
 
+    public void resetMessage() {
+        message = DEFAULT;
+    }
 }

@@ -18,5 +18,11 @@ public class MaintenanceMonitorController {
         maintenanceMonitor.setMessage(m);
         return "ok";
     }
+
+    @GetMapping("/api/message/reset")
+    String resetMessage(Model model) {
+        maintenanceMonitor.resetMessage();
+        return "ok";
+    }
 }
 

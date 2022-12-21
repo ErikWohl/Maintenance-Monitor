@@ -12,6 +12,7 @@ public class MaintenanceWindowController {
 
     @GetMapping("/api/message")
     String getMessage(Model model) {
+        model.addAttribute("color", maintenanceMonitor.getMessage().equals(maintenanceMonitor.DEFAULT) ? "lightgreen" : "red");
         model.addAttribute("testMessage", maintenanceMonitor.getMessage());
         return "index";
     }
