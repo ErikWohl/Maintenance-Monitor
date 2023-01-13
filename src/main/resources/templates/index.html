@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Maintenance Monitor</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
 </head>
 <body th:style="'background-color:'+${color}">
-<h1 style="text-align:center" th:text="${testMessage}"></h1>
+<div>
+    <h1 style="text-align:center; margin-bottom: 0.5rem">
+        Maintenance Monitor
+    </h1>
+    <div style="text-align:center" th:text="${testMessage}"></div>
+    <div style="text-align:center; margin-top: 1rem; font-size: smaller" th:text="'last update: '+${lastUpdated}"></div>
+</div>
 </body>
 </html>
